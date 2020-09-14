@@ -24,11 +24,12 @@ for (n in randarray) {
   for (k = 0; k < entry.link.length; k++) {
   if (entry.link[k].rel == "alternate") {
     var postTitle = entry.title.$t;
+    var postUrl = entry.link[k].href;
    var postID = entry.id.$t.match(/\d+$/)[0];
     
   document.write('<article class="article-posts" id="post-id-'+ postID +'">');
     document.write('<div class="box">');
-      document.write('<a class="thumbnail" href="' + entry.link[k].href + '">');
+      document.write('<a class="thumbnail" href="' + postUrl + '">');
         document.write('<img class="lazy" data-src="' + entry.media$thumbnail.url + '" alt="' + postTitle + '">');
       document.write('</a>'); // end thumbnail
 
@@ -36,7 +37,7 @@ for (n in randarray) {
   document.write('<div class="box-content">');
   document.write('<header class="article-header">');
   document.write('<h2 class="post-headding">');
-  document.write('<a class="link" href="' + entry.link[k].href + '">');
+  document.write('<a class="link" href="' + postUrl + '">');
   document.write(postTitle);
   document.write('</a>'); // end link
   document.write('</h2>'); // end post-headding
