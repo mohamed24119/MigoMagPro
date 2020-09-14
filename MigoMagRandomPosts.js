@@ -24,8 +24,10 @@ for (n in randarray) {
   for (k = 0; k < entry.link.length; k++) {
   if (entry.link[k].rel == "alternate") {
     var postTitle = entry.title.$t;
-    var postUrl = entry.link[k].href;
-   var postID = entry.id.$t.match(/\d+$/)[0];
+  var postUrl = entry.link[k].href;
+ var postID = entry.id.$t.match(/\d+$/)[0];
+var postTime = entry.published.$t;
+var postTimeFormat = postTime.substring(0, 10);
     
   document.write('<article class="article-posts" id="post-id-'+ postID +'">');
     document.write('<div class="box">');
@@ -42,6 +44,16 @@ for (n in randarray) {
   document.write('</a>'); // end link
   document.write('</h2>'); // end post-headding
   document.write('</header>'); //end article-header
+    
+ document.write('<footer class="article-footer">');
+    document.write('<div class="meta">');
+        document.write('<time class="time" datetime="' + postTime + '" title="' + postTimeFormat + '">');
+        document.write(postTimeFormat);
+        document.write('</time>'); // end time
+
+  document.write('</div>');
+document.write('</div>');
+    
 document.write('</div>');
 document.write('</div>');
 document.write('</article>');
