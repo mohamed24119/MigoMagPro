@@ -23,11 +23,13 @@ for (n in randarray) {
   var entry = json.feed.entry[p - 1];
   for (k = 0; k < entry.link.length; k++) {
   if (entry.link[k].rel == "alternate") {
+    var postTitle = entry.title.$t;
    var postID = entry.id.$t.match(/\d+$/)[0];
+    
   document.write('<article class="article-posts" id="post-id-'+ postID +'">');
     document.write('<div class="box">');
       document.write('<a class="thumbnail" href="' + entry.link[k].href + '">');
-        document.write('<img class="lazy" data-src="' + entry.media$thumbnail.url + '" alt="' + entry.title.$t + '">');
+        document.write('<img class="lazy" data-src="' + entry.media$thumbnail.url + '" alt="' + postTitle + '">');
       document.write('</a>'); // end thumbnail
 
 
@@ -35,7 +37,7 @@ for (n in randarray) {
   document.write('<header class="article-header">');
   document.write('<h2 class="post-headding">');
   document.write('<a class="link" href="' + entry.link[k].href + '">');
-  document.write(entry.title.$t);
+  document.write(postTitle);
   document.write('</a>'); // end link
   document.write('</h2>'); // end post-headding
   document.write('</header>'); //end article-header
