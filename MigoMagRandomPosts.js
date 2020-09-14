@@ -36,7 +36,7 @@ document.write("</ul>");
 }
 
 
-function gitRandomPostsLabel(url,style) {
+function gitRandomPosts(url,style) {
 document.write('<div class="featured ' + style + '">');
 document.write('<div class="cat-title">');
 document.write('<a href="' + url + '/search/label/' + label + ' ">' + label + '</a>');
