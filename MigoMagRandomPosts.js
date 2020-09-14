@@ -28,6 +28,7 @@ function randomposts(json) {
                 var postID = entry.id.$t.match(/\d+$/)[0];
                 var postTime = entry.published.$t;
                 var postTimeFormat = postTime.substring(0, 10);
+                var postLabel = entry.category[0].term;
 
                 document.write('<article class="article-posts" id="post-id-' + postID + '">');
                 document.write('<div class="box">');
@@ -49,6 +50,9 @@ function randomposts(json) {
                 document.write('<time class="time" datetime="' + postTime + '" title="' + postTimeFormat + '">');
                 document.write(postTimeFormat);
                 document.write("</time>"); // end time
+                document.write('<a class="label" href="#">');
+                document.write(postLabel);
+                document.write('</a>');
                 document.write("</div>");
                 document.write("</footer>");
 
