@@ -26,7 +26,6 @@ function randomposts(json) {
         var entry = json.feed.entry[p - 1];
         for (k = 0; k < entry.link.length; k++) {
             if (entry.link[k].rel == "alternate") {
-
                 var postTitle = entry.title.$t;
                 var postUrl = entry.link[k].href;
                 var postID = entry.id.$t.match(/\d+$/)[0];
