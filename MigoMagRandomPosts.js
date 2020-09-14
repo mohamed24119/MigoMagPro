@@ -19,6 +19,7 @@ function MigoMagRandomPosts(json) {
     
   }
   
+  
   document.write("<ul>");
   for (n in randomPostsArray) {
     var p = randomPostsArray[n];
@@ -44,7 +45,7 @@ function gitRandomPostsLabel(url, label, style) {
   document.write('<a href="' + url + '/search/label/' + label + ' ">' + label + '</a>');
   document.write('</div>');
   document.write('<div class="articles">');
-  document.write('<script src="' + url + '/feeds/posts/default/-/' + label + '?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"/>');
+  document.write('<script src="' + url + '/feeds/posts/default/-/' + label + '?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"></script>');
   document.write('</div>');
   document.write('</div>');
 }
