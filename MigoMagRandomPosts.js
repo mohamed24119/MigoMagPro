@@ -17,7 +17,7 @@ for (i = 0; i < numofpost; ) {
     randarray[i++] = l;
   }
 }
-document.write("<ul>");
+
 for (n in randarray) {
   var p = randarray[n];
   var entry = json.feed.entry[p - 1];
@@ -45,7 +45,7 @@ document.write('</article>');
     }
   }
 }
-document.write("</ul>");
+
 }
 
 
