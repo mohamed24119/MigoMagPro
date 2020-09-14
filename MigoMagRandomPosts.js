@@ -1,7 +1,7 @@
 var randarray = new Array();
 var l = 0;
 var flag;
-var numofpost = 1;
+var numofpost = 5;
 function randomposts(json) {
 var total = parseInt(json.feed.openSearch$totalResults.$t, 10);
 for (i = 0; i < numofpost; ) {
@@ -22,13 +22,26 @@ for (n in randarray) {
   var p = randarray[n];
   var entry = json.feed.entry[p - 1];
   for (k = 0; k < entry.link.length; k++) {
-    if (entry.link[k].rel == "alternate") {
-      document.write('<li>');
-      document.write('<a href=" '+ entry.link[k].href +' ">');
-      document.write('<img src=" ' + entry.media$thumbnail.url +' ">');
-      document.write(entry.title.$t);
-      document.write('</a>');
-      document.write('</li>');
+  if (entry.link[k].rel == "alternate") {
+   var postID = entry.id.$t.match(/\d+$/)[0];
+  document.write('<article class="article-posts" id="post-id-'+ postID +'">');
+    document.write('<div class="box">');
+      document.write('<a class="thumbnail" href="' + entry.link[k].href + '">');
+        document.write('<img class="lazy" data-src="' + entry.media$thumbnail.url + '" alt="' + entry.title.$t + '">');
+      document.write('</a>'); // end thumbnail
+
+
+  document.write('<div class="box-content">');
+  document.write('<header class="article-header">');
+  document.write('<h2 class="post-headding">');
+  document.write('<a class="link" href="' + entry.link[k].href + '">');
+  document.write(entry.title.$t);
+  document.write('</a>'); // end link
+  document.write('</h2>'); // end post-headding
+  document.write('</header>'); //end article-header
+document.write('</div>');
+document.write('</div>');
+document.write('</article>');
     }
   }
 }
@@ -36,7 +49,7 @@ document.write("</ul>");
 }
 
 
-function gitRandomPosts(url,style,numofpost) {
+function gitRandomPosts(url,style) {
 document.write('<div class="featured ' + style + '">');
 document.write('<div class="cat-title">');
 document.write('<a>مشاركات عشوائية</a>');
