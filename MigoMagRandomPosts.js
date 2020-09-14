@@ -3,9 +3,7 @@ var l = 0;
 var flag;
 var numofpost = 5;
 
-function variableName(){
-var postTitle = entry.title.$t;
-}
+
 
 function randomposts(json) {
     var total = parseInt(json.feed.openSearch$totalResults.$t, 10);
@@ -28,8 +26,7 @@ function randomposts(json) {
         var entry = json.feed.entry[p - 1];
         for (k = 0; k < entry.link.length; k++) {
             if (entry.link[k].rel == "alternate") {
-       
-                document.write(variableName());
+
                 var postTitle = entry.title.$t;
                 var postUrl = entry.link[k].href;
                 var postID = entry.id.$t.match(/\d+$/)[0];
