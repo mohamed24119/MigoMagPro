@@ -39,7 +39,7 @@ document.write("</ul>");
 function gitRandomPosts(url,style) {
 document.write('<div class="featured ' + style + '">');
 document.write('<div class="cat-title">');
-document.write('<a href="' + url + '/search/label/' + label + ' ">' + label + '</a>');
+document.write('<a>مشاركات عشوائية</a>');
 document.write('</div>');
 document.write('<div class="articles">');
 document.write('<script src="' + url + '/feeds/posts/default/?alt=json-in-script&start-index=1&max-results=1000&callback=randomposts"></script>');
