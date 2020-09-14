@@ -1,7 +1,7 @@
 var randarray = new Array();
 var l = 0;
 var flag;
-var numofpost = 5;
+var numofpost;
 function randomposts(json) {
 var total = parseInt(json.feed.openSearch$totalResults.$t, 10);
 for (i = 0; i < numofpost; ) {
@@ -36,7 +36,7 @@ document.write("</ul>");
 }
 
 
-function gitRandomPosts(url,style) {
+function gitRandomPosts(url,style,numofpost) {
 document.write('<div class="featured ' + style + '">');
 document.write('<div class="cat-title">');
 document.write('<a>مشاركات عشوائية</a>');
