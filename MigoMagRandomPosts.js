@@ -1,7 +1,7 @@
 var randarray = new Array();
 var l = 0;
 var flag;
-var numofpost;
+var numofpost = 1;
 function randomposts(json) {
 var total = parseInt(json.feed.openSearch$totalResults.$t, 10);
 for (i = 0; i < numofpost; ) {
