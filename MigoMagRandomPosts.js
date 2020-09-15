@@ -66,10 +66,10 @@ for (n in randarray) {
 }
 
 
-function gitRandomPosts(url, style) {
+function gitRandomPosts(url, name, style) {
 document.write('<div class="featured ' + style + '">');
 document.write('<div class="cat-title">');
-document.write("<a>مشاركات عشوائية</a>");
+document.write("<a>'+ name +'</a>");
 document.write("</div>");
 document.write('<div class="articles">');
 document.write('<script src="' + url + '/feeds/posts/default/?alt=json-in-script&start-index=1&max-results=1000&callback=randomposts"/>');
@@ -83,7 +83,7 @@ document.write('<div class="cat-title">');
 document.write('<a href="' + url + '/search/label/' + label + ' ">' + label + "مشاركات عشوائية من قسم" '</a>');
 document.write("</div>");
 document.write('<div class="articles">');
-document.write('<script src="' + url + '/feeds/posts/default/?alt=json-in-script&start-index=1&max-results=1000&callback=randomposts"/>');
+document.write('<script src="' + url + '/feeds/posts/default/-/' + label + '?alt=json-in-script&start-index=1&max-results=1000&callback=randomposts"/>');
 document.write("</div>");
 document.write("</div>");
 }
