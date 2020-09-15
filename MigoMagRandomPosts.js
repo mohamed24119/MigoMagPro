@@ -63,7 +63,7 @@ for (n in randarray) {
         }
     }
 }
-}
+
 
 
 function gitRandomPosts(url, name, style) {
