@@ -169,7 +169,8 @@ overflow: hidden;
 
 
 /*============= start grid-2 =============*/
-@media(min-width:576px){.grid-2 .articles .article-posts,.grid-3 .articles .article-posts,.grid-4 .articles .article-posts{width:50%}
+@media(min-width:576px){.grid-2 .articles .article-posts,.grid-3 .articles .article-posts,
+ {width:50%}
 .not-sidebar.grid-2 .articles .article-posts .thumbnail,.show-sidebar.grid-2 .articles .article-posts .thumbnail{height:150px}.not-sidebar.grid-2 .articles .article-posts .box-content,.show-sidebar.grid-2 .articles .article-posts .box-content{height:120px}}@media(min-width:768px){.not-sidebar.grid-2 .articles .article-posts .thumbnail,.show-sidebar.grid-2 .articles .article-posts .thumbnail{height:250px}.not-sidebar.grid-2 .articles .article-posts .box-content,.show-sidebar.grid-2 .articles .article-posts .box-content{height:100px}}@media(min-width:992px){.not-sidebar.grid-2 .articles .article-posts .thumbnail{height:300px}.not-sidebar.grid-2 .articles .article-posts .box-content{height:100px}.grid-2 .articles .article-posts .post-headding .link{font-size:18px}.show-sidebar.grid-2 .articles .article-posts .thumbnail{height:200px}.show-sidebar.grid-2 .articles .article-posts .box-content{height:120px}}@media(min-width:1200px){.not-sidebar.grid-2 .articles .article-posts .thumbnail{height:350px}.show-sidebar.grid-2 .articles .article-posts .thumbnail{height:230px}.show-sidebar.grid-2 .articles .article-posts .box-content{height:100px}}
 /*============= end grid-2 =============*/
 /*============= start grid-3 =============*/
@@ -216,7 +217,8 @@ overflow: hidden;
 
 
 @media(min-width:1200px){
-.grid-4 .articles .article-posts {width: 25%;}
+.not-sideba.grid-4 .articles .article-posts,
+.show-sideba.grid-4 .articles .article-posts{width: 25%;}
 .not-sidebar.grid-4 .articles .article-posts .thumbnail {height: 200px;}
 .not-sidebar.grid-4 .articles .article-posts .box-content {height: 110px;}
 .show-sidebar.grid-4 .articles .article-posts .thumbnail {height: 150px;}
