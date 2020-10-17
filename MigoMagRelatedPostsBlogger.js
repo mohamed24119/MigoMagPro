@@ -24,7 +24,7 @@ function PrintRelatedPosts() {
 var randomPost = Math.floor((relatedTitles.length - 1) * Math.random());
 var i = 0;
 while (i < relatedTitles.length && i < 6) {
-document.write('<article class="article-posts start">');
+document.write('<article class="article-posts">');
   document.write('<div class="box">');
   if (showPostThumbnail == true) {
       document.write('<a class="thumbnail" href="' + relatedUrls[randomPost] + '">');
