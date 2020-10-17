@@ -28,7 +28,7 @@ document.write('<article class="article-posts start">');
   document.write('<div class="box">');
   if (showPostThumbnail == true) {
       document.write('<a class="thumbnail" href="' + relatedUrls[randomPost] + '">');
-      document.write('<img class="lazy" data-src="' + relatedThumbnail[randomPost] + '" alt="' + relatedTitles[randomPost] + '">');
+      document.write('<img class="lozad" data-src="' + relatedThumbnail[randomPost] + '" alt="' + relatedTitles[randomPost] + '">');
       document.write('</a>');
   }
   document.write('<div class="box-content">');
