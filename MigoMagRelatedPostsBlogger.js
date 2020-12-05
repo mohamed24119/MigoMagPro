@@ -24,7 +24,7 @@ function printRelatedLabels() {
 var randomPost = Math.floor((relatedTitles.length - 1) * Math.random());
 var i = 0;
 while (i < relatedTitles.length && i < 6) {
-var printElements = '<div class="box"><a class="thumbnail" href="'+ relatedUrls[randomPost] +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ relatedThumbnail[relatedPostNum] +'" alt="'+ relatedTitles[randomPost] +'"></a><div class="box-content"><h4 class="post-headding"><a class="link" href="'+ relatedUrls[randomPost] +'">'+ relatedTitles[randomPost] +'</a></h4></div></div>';
+var printElements = '<div class="box"><a class="thumbnail" href="'+ relatedUrls[randomPost] +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ relatedThumbnail +'" alt="'+ relatedTitles[randomPost] +'"></a><div class="box-content"><h4 class="post-headding"><a class="link" href="'+ relatedUrls[randomPost] +'">'+ relatedTitles[randomPost] +'</a></h4></div></div>';
 	document.write('<article class="article-posts swiper-slide">'+ printElements +'</article>');
 if (randomPost < relatedTitles.length - 1) {
 randomPost++;
