@@ -7,7 +7,8 @@ function related_results_labels(json) {
    for (var i = 0; i < json.feed.entry.length; i++) {
       var entry = json.feed.entry[i];
       relatedTitles[relatedPostNum] = entry.title.$t;
-      relatedThumbnail[relatedPostNum] = entry.media$thumbnail.url.replace("s72-c", "s1600");
+      relatedThumbnail[relatedPostNum] = entry.media$thumbnail.url;
+	   var fixThumbnail = relatedThumbnail[relatedPostNum].replace("s72-c", "s1600");
 
       for (var k = 0; k < entry.link.length; k++) {
          if (entry.link[k].rel == 'alternate') {
