@@ -1,7 +1,7 @@
 var randomPostsArray = new Array();
 //var l = 0;
 //var flag;
-var numRandomPosts = 1;
+var numRandomPosts = 4;
 function MigoMagRandomPosts(json) {
   var totalRandomPosts = parseInt(json.feed.openSearch$totalResults.$t, 10);
   for (i = 0; i < numRandomPosts; ) {
