@@ -34,12 +34,10 @@ function printRelatedLabels() {
   var i = 0;
   document.write('<ul>');
   while (i < relatedTitles.length && i < 6) {
-    document.write('<li>');
-    document.write('<a href="' + relatedUrls[randomPost] + '">');
-    document.write('<img src="' + relatedThumbnail[randomPost] + '">');
-    document.write(relatedTitles[randomPost]);
-    document.write('</a>');
-    document.write('<li>');
+    
+    var printElements = '<div class="box"><a class="thumbnail" href="'+ relatedUrls[randomPost] +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ relatedThumbnail[randomPost] +'" alt="'+ relatedTitles[randomPost] +'"></a><div class="box-content"><h4 class="post-headding"><a class="link" href="'+ relatedUrls[randomPost] +'">'+ relatedTitles[randomPost] +'</a></h4></div></div>';
+		document.write('<article class="article-posts swiper-slide">'+ printElements +'</article>');
+
     if (randomPost < relatedTitles.length - 1) {
       randomPost++;
     } else {
