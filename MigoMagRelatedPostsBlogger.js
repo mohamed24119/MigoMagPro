@@ -8,6 +8,7 @@ function related_results_labels(json) {
       var entry = json.feed.entry[i];
       relatedTitles[relatedPostNum] = entry.title.$t;
       relatedThumbnail[relatedPostNum] = entry.media$thumbnail.url;
+      var fixThumbnail = relatedThumbnail[relatedPostNum].replace("s72-c", "s1600");
 
       for (var k = 0; k < entry.link.length; k++) {
          if (entry.link[k].rel == 'alternate') {
@@ -35,7 +36,7 @@ function printRelatedLabels() {
   document.write('<ul>');
   while (i < relatedTitles.length && i < 6) {
     
-    var printElements = '<div class="box"><a class="thumbnail" href="'+ relatedUrls[randomPost] +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ relatedThumbnail[randomPost] +'" alt="'+ relatedTitles[randomPost] +'"></a><div class="box-content"><h4 class="post-headding"><a class="link" href="'+ relatedUrls[randomPost] +'">'+ relatedTitles[randomPost] +'</a></h4></div></div>';
+    var printElements = '<div class="box"><a class="thumbnail" href="'+ relatedUrls[randomPost] +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ fixThumbnail +'" alt="'+ relatedTitles[randomPost] +'"></a><div class="box-content"><h4 class="post-headding"><a class="link" href="'+ relatedUrls[randomPost] +'">'+ relatedTitles[randomPost] +'</a></h4></div></div>';
 		document.write('<article class="article-posts swiper-slide">'+ printElements +'</article>');
 
     if (randomPost < relatedTitles.length - 1) {
