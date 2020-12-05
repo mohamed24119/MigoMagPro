@@ -8,7 +8,7 @@ function related_results_labels(json) {
       var entry = json.feed.entry[i];
       relatedTitles[relatedPostNum] = entry.title.$t;
       relatedThumbnail[relatedPostNum] = entry.media$thumbnail.url;
-      var fixThumbnail = relatedThumbnail[relatedPostNum].replace("s72-c", "s1600");
+      fixThumbnail = relatedThumbnail[relatedPostNum].replace("s72-c", "s1600");
 
       for (var k = 0; k < entry.link.length; k++) {
          if (entry.link[k].rel == 'alternate') {
@@ -19,15 +19,6 @@ function related_results_labels(json) {
       }
    }
 }
-
-
-
-
-/*
-function contains(a, e) {
-   for(var j = 0; j < a.length; j++) if (a[j]==e) return true;
-return false;
-}*/
 
 
 function printRelatedLabels() {
