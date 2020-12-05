@@ -19,22 +19,19 @@ function MigoMagRandomPosts(json) {
 }
   
 
-document.write("<ul>");
+
 for (n in randomPostsArray) {
   var p = randomPostsArray[n];
   var entry = json.feed.entry[p - 1];
   for (k = 0; k < entry.link.length; k++) {
     if (entry.link[k].rel == "alternate") {
-      document.write('<li>');
-        document.write('<a href=" '+ entry.link[k].href +' ">');
-          document.write('<img src=" ' + entry.media$thumbnail.url +' ">');
-          document.write(entry.title.$t);
-        document.write('</a>');
-      document.write('</li>');
+      
+      var printElements = '<div class="box"><a class="thumbnail" href="'+ entry.link[k].href +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ entry.media$thumbnail.url +'" alt="'+ entry.title.$t +'"></a><div class="box-content"><h2 class="post-headding"><a class="link" href="'+ entry.link[k].href +'">'+ entry.title.$t +'</a></h2></div></div>';
+		document.write('<article class="article-posts swiper-slide">'+ printElements +'</article>');
     }
   }
 }
-document.write("</ul>");
+
 } 
 
 
