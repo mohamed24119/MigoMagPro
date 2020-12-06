@@ -62,7 +62,7 @@ function getLastPostsLabelRandom(url,label,style) {
 
 
 function getRandomPostsLabelSlide(url,label,style,slideId){
-	document.write('<div class="featured '+ style +'"><div class="cat-title"><a class="cat-text" href="'+ url +'/search/label/'+ label +'">'+ label +'</a></div><div class="swiper-container" id="'+ slideId +'"><div class="articles swiper-wrapper"><script src="'+ url +'/feeds/posts/default/-/'+ label +'?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"></script></div><div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div></div></div>');
+	document.write('<div class="featured '+ style +'"><div class="cat-title"><a class="cat-text" href="'+ url +'/search/label/'+ label +'">مشاركات عشوائية من قسم: '+ label +'</a></div><div class="swiper-container" id="'+ slideId +'"><div class="articles swiper-wrapper"><script src="'+ url +'/feeds/posts/default/-/'+ label +'?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"></script></div><div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div></div></div>');
 }
   
 /* 
