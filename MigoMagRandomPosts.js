@@ -38,7 +38,7 @@ for (n in randomPostsArray) {
 function getLastPostsRandom(url,name,style) {
   document.write('<div class="featured '+ style +'">');
     document.write('<div class="cat-title">');
-      document.write('<a class="cat-text">'+ name +'</a>');
+      document.write('<span class="cat-text">'+ name +'</span>');
     document.write('</div>');
     document.write('<div class="articles">');
       document.write('<script src="' + url + '/feeds/posts/default?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"></script>');
