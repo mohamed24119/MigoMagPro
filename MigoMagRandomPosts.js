@@ -25,8 +25,11 @@ for (n in randomPostsArray) {
   var entry = json.feed.entry[p - 1];
   for (k = 0; k < entry.link.length; k++) {
     if (entry.link[k].rel == "alternate") {
+	    
+	    var RThumbnail = entry.media$thumbnail.url;
+	    var fixThumbnail = RThumbnail.replace("s72-c", "s1600");
       
-      var printElements = '<div class="box"><a class="thumbnail" href="'+ entry.link[k].href +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ entry.media$thumbnail.url +'" alt="'+ entry.title.$t +'"></a><div class="box-content"><h2 class="post-headding"><a class="link" href="'+ entry.link[k].href +'">'+ entry.title.$t +'</a></h2></div></div>';
+      var printElements = '<div class="box"><a class="thumbnail" href="'+ entry.link[k].href +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ fixThumbnail +'" alt="'+ entry.title.$t +'"></a><div class="box-content"><h2 class="post-headding"><a class="link" href="'+ entry.link[k].href +'">'+ entry.title.$t +'</a></h2></div></div>';
 		document.write('<article class="article-posts swiper-slide">'+ printElements +'</article>');
     }
   }
