@@ -1,6 +1,6 @@
 var randomPostsArray = new Array();
-//var l = 0;
-//var flag;
+var l = 0;
+var flag;
 var numRandomPosts = 4;
 function MigoMagRandomPosts(json) {
   var totalRandomPosts = parseInt(json.feed.openSearch$totalResults.$t, 10);
@@ -38,7 +38,7 @@ for (n in randomPostsArray) {
 function getLastPostsRandom(url,name,style) {
   document.write('<div class="featured '+ style +'">');
     document.write('<div class="cat-title">');
-      document.write('<a>'+ name +'</a>');
+      document.write('<a class="cat-text">'+ name +'</a>');
     document.write('</div>');
     document.write('<div class="articles">');
       document.write('<script src="' + url + '/feeds/posts/default?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"></script>');
@@ -49,7 +49,7 @@ function getLastPostsRandom(url,name,style) {
 function getLastPostsLabelRandom(url,label,style) {
   document.write('<div class="featured '+ style +'">');
     document.write('<div class="cat-title">');
-      document.write('<a>'+ label +'</a>');
+      document.write('<a class="cat-text">'+ label +'</a>');
     document.write('</div>');
     document.write('<div class="articles">');
       document.write('<script src="' + url + '/feeds/posts/default/-/'+ label +'?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"></script>');
