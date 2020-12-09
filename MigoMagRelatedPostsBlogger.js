@@ -19,10 +19,13 @@ function related_results_labels(json) {
 }
 
 
-function printRelatedLabels() {
+function printRelatedLabels(maxPosts) {
+	if(maxPosts == null || maxPosts == ""){
+	var maxPosts = 4;
+	}
 	var randomPost = Math.floor((relatedTitles.length - 1) * Math.random());
 	var i = 0;
-	while (i < relatedTitles.length && i < 6) {
+	while (i < relatedTitles.length && i < maxPosts) {
 		var fixThumbnail = relatedThumbnail[randomPost].replace("s72-c", "s1600");
 		var printElements = '<div class="box"><a class="thumbnail" href="'+ relatedUrls[randomPost] +'"><img loading="lazy" class="swiper-lazy lazy" data-src="'+ fixThumbnail +'" alt="'+ relatedTitles[randomPost] +'"></a><div class="box-content"><h4 class="post-headding"><a class="link" href="'+ relatedUrls[randomPost] +'">'+ relatedTitles[randomPost] +'</a></h4></div></div>';
 		document.write('<article class="article-posts swiper-slide">'+ printElements +'</article>');
