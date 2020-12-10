@@ -39,14 +39,7 @@ for (n in randomPostsArray) {
 
 
 function getLastPostsRandom(url,name,style) {
-  document.write('<div class="featured '+ style +'">');
-    document.write('<div class="cat-title">');
-      document.write('<span class="cat-text">'+ name +'</span>');
-    document.write('</div>');
-    document.write('<div class="articles">');
-      document.write('<script src="' + url + '/feeds/posts/default?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"></script>');
-    document.write('</div>');
-  document.write('</div>');
+  document.write('<div class="featured '+ style +'"><div class="cat-title"><span class="cat-text">'+ name +'</span></div><div class="articles"><script src="' + url + '/feeds/posts/default?alt=json-in-script&start-index=1&max-results=1000&callback=MigoMagRandomPosts"></script></div></div>');
 }
 
 function getLastPostsLabelRandom(url,label,style) {
