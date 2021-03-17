@@ -36,3 +36,4 @@ function printMigoMagPosts(t, s) {
       o++
   }
 }
+
